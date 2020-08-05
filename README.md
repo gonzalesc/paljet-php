@@ -1,2 +1,2 @@
 # paljet-php
-Paljet Integration
+Paljet PHP Integration

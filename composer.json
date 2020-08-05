@@ -1,0 +1,22 @@
+{
+  "name": "gonzalesc/paljet-php",
+  "description": "Paljet API client for PHP",
+  "keywords": ["paljet", "client", "api", "php", "post", "get", "woocommerce"],
+  "homepage": "https://www.letsgodev.com",
+  "type": "library",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Gonzalesc",
+      "homepage": "https://github.com/gonzalesc/paljet-php/contributors"
+    }
+  ],
+
+  "require": {
+    "php": ">=5.3.3",
+    "rmccue/requests": ">=1.0"
+  },
+  "autoload": {
+    "classmap": ["lib/Paljet/"]
+  }
+}
