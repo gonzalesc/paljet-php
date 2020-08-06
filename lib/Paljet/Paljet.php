@@ -26,20 +26,20 @@ class Paljet {
 	 */
 	public function __construct( $access ) {
 		
-		$this->access = $access;
-		if ( ! isset( $this->access['url'] ) ||
-			! isset( $this->access['user'] ) ||
-			! isset( $this->access['pass'] ) ||
-			! isset( $this->access['emp'] )
+		$this->access = (object) $access;
+		if ( ! isset( $this->access->url ) ||
+			! isset( $this->access->user ) ||
+			! isset( $this->access->pass ) ||
+			! isset( $this->access->emp )
 		) {
 		  throw new Errors\InvalidOptions();
 		}
 
 
 		//$this->Products = new Products($this);
-		$this->Categories = new Categories($this);
-		$this->Brands = new Brands($this);
-		$this->Prices = new Prices($this);
+		$this->Categories = new Categories( $this );
+		$this->Brands = new Brands( $this );
+		$this->Prices = new Prices( $this );
 	}
 
 	public function GetAccess() {

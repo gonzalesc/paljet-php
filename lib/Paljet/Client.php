@@ -12,12 +12,12 @@ use Paljet\Error as Errors;
 class Client {
 	public function request($method, $path, $access, $data = NULL) {
 		try {
-			$url = untrailingslashit( $access['url'] ) . $path;
-			$options = [ 'timeout' => 120, 'auth' => [ $access['user'], $access['pass'] ] ];
+			$url = untrailingslashit( $access->url ) . $path;
+			$options = [ 'timeout' => 120, 'auth' => [ $access->user, $access->pass ] ];
 			$headers = [
 				'Content-Type'	=> 'application/json',
 				'Accept'		=> 'application/json',
-				'EmpID'			=> $access['emp'],
+				'EmpID'			=> $access->emp,
 			];
 
 			if($method == "GET") {
