@@ -36,7 +36,8 @@ class Paljet {
 		}
 
 
-		//$this->Products = new Products($this);
+		$this->Users = new Users( $this );
+		$this->Products = new Products($this);
 		$this->Categories = new Categories( $this );
 		$this->Brands = new Brands( $this );
 		$this->Prices = new Prices( $this );
