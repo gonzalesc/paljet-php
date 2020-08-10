@@ -21,7 +21,10 @@ class Client {
 			];
 
 			if($method == "GET") {
+
+				$url = ! empty( $data ) ? $url . '?' . http_build_query( $data ) : $url;
 				$response = \Requests::get( $url, $headers, $options );
+				
 			} else if($method == "POST") {
 				$response = \Requests::post( $url, $headers, json_encode( $data ), $options );
 			} else if($method == "PATCH") {
