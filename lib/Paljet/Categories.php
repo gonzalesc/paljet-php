@@ -3,7 +3,7 @@
 namespace Paljet;
 
 /**
- * Class Categories
+ * Categories Class
  *
  * @package Paljet
  */

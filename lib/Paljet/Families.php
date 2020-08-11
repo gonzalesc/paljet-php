@@ -3,13 +3,13 @@
 namespace Paljet;
 
 /**
- * Class Categories
+ * Families Class
  *
  * @package Paljet
  */
 class Families extends Resource {
 
-	const URL_CATS = "/familias";
+	const URL_FAMILIES = "/familias";
 
 	/**
 	 * @param string|null $id
@@ -17,7 +17,7 @@ class Families extends Resource {
 	 * @return get a Product.
 	 */
 	public function get( $options = NULL ) {
-		return $this->request( "GET", self::URL_CATS, $this->paljet->GetAccess(), $options );
+		return $this->request( "GET", self::URL_FAMILIES, $this->paljet->GetAccess(), $options );
 	}
 
 }
