@@ -10,7 +10,7 @@ use Paljet\Error as Errors;
  * @package Paljet
  */
 class Client {
-	public function request($method, $path, $access, $data = NULL) {
+	public function request($method, $path, $access, $data = NULL, $format = NULL) {
 		try {
 			$url = untrailingslashit( $access->url ) . $path;
 			$options = [ 'timeout' => 120, 'auth' => [ $access->user, $access->pass ] ];
@@ -21,6 +21,22 @@ class Client {
 			];
 
 			if($method == "GET") {
+
+				if( ! is_null( $format ) ) {
+					$tempData = $data;
+
+					foreach( $tempData as $key => $value ) {
+						if( ! isset( $format[ $key ] ) )
+							continue;
+
+						switch( $format[ $key ] ) {
+							case '%d' : $data[ $key ] = intval( $value ); break;
+							case '%f' : $data[ $key ] = floatval( $value ); break;
+							case '%b' : $data[ $key ] = ! empty( $value ) ? 'true' : 'false'; break;
+							default : $data[ $key ] = strval( $value ); break;
+						}
+					}
+				}
 
 				$url = ! empty( $data ) ? $url . '?' . http_build_query( $data ) : $url;
 				$response = \Requests::get( $url, $headers, $options );

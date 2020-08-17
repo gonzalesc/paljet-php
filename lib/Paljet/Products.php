@@ -16,8 +16,8 @@ class Products extends Resource {
 	 *
 	 * @return get a Product.
 	 */
-	public function get($options = NULL) {
-		return $this->request( "GET", self::URL_PRODUCTS, $this->paljet->GetAccess(), $options );
+	public function get($options = NULL, $format = NULL) {
+		return $this->request( "GET", self::URL_PRODUCTS, $this->paljet->GetAccess(), $options, $format );
 	}
 
 }
