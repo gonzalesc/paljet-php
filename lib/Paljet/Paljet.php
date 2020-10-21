@@ -44,6 +44,7 @@ class Paljet {
 		$this->Categories = new Categories( $this );
 		$this->Brands = new Brands( $this );
 		$this->Prices = new Prices( $this );
+		$this->Orders = new Orders( $this );
 	}
 
 	public function GetAccess() {
